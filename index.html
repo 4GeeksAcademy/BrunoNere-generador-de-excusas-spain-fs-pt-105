@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Excusas</title>
+</head>
+<body>
+    <h1>Generador de Excusas</h1>
+    <p id="excuse">My pet is small and a liar</p>
+
+    <script>
+    let who = ['The dog', 'My grandma', 'The mailman', 'My bird'];
+    let action = ['ate', 'peed', 'crushed', 'broke'];
+    let what = ['my homework', 'my phone', 'the car'];
+    let when = ['before the class', 'when I was sleeping', 'while I was exercising', 'during my lunch', 'while I was praying'];
+
+    function generateExcuse() {
+        let whoIndex = Math.floor(Math.random() * who.length);
+        let actionIndex = Math.floor(Math.random() * action.length);
+        let whatIndex = Math.floor(Math.random() * what.length);
+        let whenIndex = Math.floor(Math.random() * when.length);
+        
+        let excuse = `${who[whoIndex]} ${action[actionIndex]} ${what[whatIndex]} ${when[whenIndex]}`
+        document.getElementById("excuse").innerText = excuse;
+    }
+        window.onload = generateExcuse;
+
+    </script>
+</body>
+</html>
